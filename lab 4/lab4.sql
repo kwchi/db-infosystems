@@ -76,5 +76,5 @@ SELECT * FROM order_log;
 DELETE FROM Orders WHERE id = 1;
 
 -- Перевірка, чи видалилось замовлення
-SELECT * FROM order_log WHERE order_id = 1;
+SELECT * FROM Orders WHERE id = 1;
 
