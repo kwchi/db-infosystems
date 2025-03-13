@@ -61,7 +61,10 @@ EXECUTE FUNCTION update_order_total();
 INSERT INTO Orders (customer_id, total_amount) VALUES (1, 0);
 
 -- Додаємо товар у замовлення
-INSERT INTO OrderDetails (order_id, product_id, quantity, price) VALUES (1, 2, 3, 100);
+INSERT INTO OrderDetails (order_id, product_id, quantity, price) 
+SELECT 6, id, 3, price 
+FROM Products 
+WHERE id = 2;
 
 -- Перевіряємо, чи оновився total_amount у Orders
 SELECT * FROM Orders WHERE id = 1;
