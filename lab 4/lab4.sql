@@ -9,7 +9,7 @@ CREATE OR REPLACE FUNCTION calculate_average_price(category_id_param INT) RETURN
 DECLARE
     avg_price NUMERIC;
 BEGIN
-    SELECT AVG(price) INTO avg_price FROM Products WHERE category_id = category_id_param;
+    SELECT AVG(price) INTO avg_price FROM Products;
     RETURN avg_price;
 END;
 $$ LANGUAGE plpgsql;
